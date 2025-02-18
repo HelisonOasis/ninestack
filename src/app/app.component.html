@@ -1,0 +1,1263 @@
+<section class="fundoBackground" ng-app="app" ng-controller="MainCtrl">
+  <header>
+    <div class="headerMenu" [ngClass]="{ show: showHeader }">
+      <div class="navbar" style="display: flex; flex-direction: row">
+        <div class="logoHeader">
+          <img src="../assets/logoHeader.svg" alt="" />
+        </div>
+        <div class="menuHamb">
+          <button (click)="changeShowMenuHamb()">
+            <img src="../assets/iconBars.svg" alt="" />
+          </button>
+        </div>
+        <div class="headerButton">
+          <button class="headerButton1" (click)="scrollToSection('intro')">
+            Introdução ao App
+          </button>
+          <button class="headerButton2" (click)="scrollToSection('exercicios')">
+            Exercícios
+          </button>
+          <button class="headerButton3" (click)="scrollToSection('funcionar')">
+            Faça Funcionar
+          </button>
+          <button class="headerButton4" (click)="scrollToSection('comunidade')">
+            Comunidade
+          </button>
+          <button class="headerButton5" (click)="scrollToSection('planos')">
+            Planos
+          </button>
+          <button class="headerButton6" (click)="scrollToSection('duvidas')">
+            Dúvidas
+          </button>
+          <button class="headerButton7" (click)="scrollToSection('contato')">
+            Contato
+          </button>
+          <a href=""><img src="../assets/logoAppleStore.svg" /></a>
+          <a href=""><img src="../assets/logoPlayStore.svg" /></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="menu-content" *ngIf="showMenuHamb">
+    <button class="close-button" (click)="changeShowMenuHamb()">X</button>
+    <button class="headerButton1" (click)="scrollToSection('intro')">
+      Introdução ao App
+    </button>
+    <button class="headerButton2" (click)="scrollToSection('exercicios')">
+      Exercícios
+    </button>
+    <button class="headerButton3" (click)="scrollToSection('funcionar')">
+      Faça Funcionar
+    </button>
+    <button class="headerButton4" (click)="scrollToSection('comunidade')">
+      Comunidade
+    </button>
+    <button class="headerButton5" (click)="scrollToSection('planos')">
+      Planos
+    </button>
+    <button class="headerButton6" (click)="scrollToSection('duvidas')">
+      Dúvidas
+    </button>
+    <button class="headerButton7" (click)="scrollToSection('contato')">
+      Contato
+    </button>
+    <a href=""><img src="../assets/logoAppleStore.svg" /></a>
+    <a href=""><img src="../assets/logoPlayStore.svg" /></a>
+  </div>
+  <section class="container">
+    <div class="main-container">
+      <div class="left-column">
+        <img src="../assets/iconPlaneta3.svg" alt="" />
+        <img src="../assets/iconEstacaoEspacial.svg" alt="" class="estacaoEspacial" />
+      </div>
+      <div class="center-column">
+        <img src="../assets/logoNineStack.svg" alt="" />
+        <p class="description">
+          Navegue pelo espaço com Jeff, Tasha, E e T para conhecer mais do
+          aplicativo que vai te levar do zero a um programador
+        </p>
+        <div class="glassButton">
+          <button (click)="scrollToSection('intro')">
+            <b class="glassFirstButton">Iniciar</b>
+            <b class="glassSecondButton">Jornada</b>
+          </button>
+        </div>
+        <div class="logoStore2">
+          <a href=""><img src="assets/logoPlayStore.svg" alt="Logo Google Play Store" class="storeLogo" /></a>
+          <a href=""><img src="assets/logoAppleStore.svg" alt="Logo Apple App Store" class="storeLogo" /></a>
+        </div>
+      </div>
+      <div class="right-column">
+        <img src="../assets/iconPlaneta2.svg" alt="" class="planeta2" />
+        <img src="../assets/iconPlaneta1.svg" alt="" class="planeta1" />
+      </div>
+    </div>
+    <section>
+      <div class="flex-container-pai" id="intro">
+        <div class="terra-logo-container">
+          <img src="../assets/iconTerra.svg" alt="" class="terra-logo" />
+        </div>
+        <div class="flex-container">
+          <div class="explicationCard">
+            <span class="spanContainer" *ngIf="showExplicationCards">
+              <div class="paragrafo">
+                <h1>O que é a NineStacks?</h1>
+                <p>
+                  A NineStacks é um aplicativo de aprendizado para quem deseja
+                  iniciar
+                  <span>uma carreira como desenvolvedor de software</span>,
+                  mesmo com pouco ou nenhum conhecimento. Nós ensinamos passo a
+                  passo para você alcançar seu <span>primeiro estágio</span> ou
+                  <span>nível Júnior</span>.
+                </p>
+              </div>
+              <div class="paragrafo">
+                <h1>Qual a nossa Metodologia?</h1>
+                <p>
+                  Após escolher sua <span>Rota Espacial</span>, você viajará por
+                  um Roadmap interestelar, onde cada parada trará diferentes
+                  desafios e exercícios para você se aprofundar cada vez mais na
+                  tecnologia escolhida. Além disso, haverá uma área de consulta
+                  repleta de documentações e dicas para ensinar da melhor forma
+                  como alcançar o conhecimento necessário para seus primeiros
+                  projetos e vagas.
+                </p>
+              </div>
+              <div class="paragrafo">
+                <h1>O que são as Rotas Espaciais?</h1>
+                <p>
+                  As Rotas Espaciais são os tipos de tecnologia que você escolhe
+                  aprender. Dentro da NineStacks, temos algumas trilhas
+                  disponíveis no momento. Clique no botão abaixo para vê-las.
+                </p>
+              </div>
+              <div class="explicationButton">
+                <button (click)="changeShowExplicationCards()">
+                  <span class="explicationText">Rotas Espaciais</span>
+                  <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                    viewBox="0 0 28 25">
+                    <path
+                      d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                      fill="currentColor" />
+                    <path
+                      d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                      fill="currentColor" />
+                    <path
+                      d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                      fill="currentColor" />
+                    <path
+                      d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                      fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </span>
+            <span class="spanContainer" *ngIf="!showExplicationCards">
+              <div class="paragrafo">
+                <div style="display: flex; gap: 10px">
+                  <img src="../assets/iconWeb.svg" alt="" />
+                  <h1>Web Básico</h1>
+                </div>
+                <p>
+                  Aprenda o básico do desenvolvimento Web e domine tecnologias
+                  como HTML, CSS e JavaScript para criar aplicações web de alta
+                  qualidade.
+                </p>
+              </div>
+              <div class="paragrafo">
+                <div style="display: flex; gap: 10px">
+                  <img src="../assets/iconAngular.svg" alt="" />
+                  <h1>Angular</h1>
+                </div>
+                <p>
+                  Domine um dos frameworks de front-end mais utilizados no
+                  mercado atualmente.
+                </p>
+              </div>
+              <div class="paragrafo">
+                <div style="display: flex; gap: 10px">
+                  <img src="../assets/iconProg.svg" alt="" />
+                  <h1>Introdução a Programação</h1>
+                </div>
+                <p>
+                  Conheça tudo sobre lógica de programação e descubra como dar o
+                  pontapé inicial na sua carreira.
+                </p>
+              </div>
+              <div class="paragrafo">
+                <div style="display: flex; gap: 10px">
+                  <img src="../assets/iconPython.svg" alt="" />
+                  <h1>Python</h1>
+                </div>
+                <p>
+                  Seja introduzido a uma das linguagens mais utilizadas e
+                  versáteis do mundo, que pode ser usada tanto para back-end
+                  quanto para front-end.
+                </p>
+              </div>
+              <div class="explicationButtonBack">
+                <button (click)="changeShowExplicationCards()">
+                  <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                    viewBox="0 0 29 26">
+                    <path
+                      d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                      fill="currentColor" />
+                    <path
+                      d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                      fill="currentColor" />
+                    <path
+                      d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                      fill="currentColor" />
+                    <path
+                      d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                      fill="currentColor" />
+                  </svg>
+                  <span class="explicationText">Voltar</span>
+                </button>
+              </div>
+            </span>
+          </div>
+          <img src="../assets/appleScreen1.png" alt="" class="appleScreen1" />
+        </div>
+      </div>
+      <div class="flex-container-pai2" id="exercicios">
+        <div class="planeta4-container">
+          <img src="../assets/iconPlaneta4.svg" alt="" class="planeta4Logo" />
+        </div>
+        <div class="flex-container2">
+          <div class="section-page2">
+            <div class="explicationCard2">
+              <div class="paragrafo" *ngIf="showDivsCards[0]">
+                <div>
+                  <h1>Como funcionam nossos Exercícios</h1>
+                </div>
+                <p>
+                  Além da nossa documentação, que serve de apoio, a Nine oferece
+                  vários métodos para aplicar exercícios de forma didática e
+                  prática, para que você absorva tudo corretamente e consiga
+                  aplicar em seus projetos ou vagas.
+                </p>
+                <div class="explicationButton">
+                  <button (click)="changeShowDivsCards(0)">
+                    <span class="explicationText">Tipos de Exercícios</span>
+                    <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                      viewBox="0 0 28 25">
+                      <path
+                        d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                        fill="currentColor" />
+                      <path
+                        d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                        fill="currentColor" />
+                      <path
+                        d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                        fill="currentColor" />
+                      <path
+                        d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                        fill="currentColor" />
+                    </svg> </button>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsCards[1]" style="margin-right: -140rem">
+                <div>
+                  <h1>Multipla Escolha</h1>
+                </div>
+                <p>
+                  O exercício mostrará um código e apresentará quatro opções de
+                  possíveis linhas de código; você deve adicionar a linha
+                  correta para prosseguir.
+                </p>
+                <div class="explicationButton">
+                  <button (click)="changeShowDivsCards(1)">
+                    <span class="explicationText">Avançar</span>
+                    <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                      viewBox="0 0 28 25">
+                      <path
+                        d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                        fill="currentColor" />
+                      <path
+                        d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                        fill="currentColor" />
+                      <path
+                        d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                        fill="currentColor" />
+                      <path
+                        d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                        fill="currentColor" />
+                    </svg> </button>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsCards[2]" style="bottom: 0">
+                <div>
+                  <h1>Complete o Código</h1>
+                </div>
+                <p>
+                  Será exibida parte de um código com uma caixa de texto para
+                  você preencher o que falta para o código funcionar, reforçando
+                  se você conseguiu memorizar corretamente como construir um
+                  código.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsCards(5)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsCards(2)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsCards[3]" style="margin-right: -136rem; bottom: 0">
+                <div>
+                  <h1>Conecte os Blocos de Texto</h1>
+                </div>
+                <p>
+                  Conecte os pares de código que podem ser usados para obter um
+                  resultado.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsCards(6)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsCards(3)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsCards[4]" style="margin-left: -65rem">
+                <div>
+                  <h1>Conecte os Blocos com Imagens</h1>
+                </div>
+                <p>
+                  Conecte os códigos às imagens que correspondem aos seus
+                  resultados.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsCards(7)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsCards(4)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+              <img src="{{ appleScreen }}" alt="" class="appleScreen1" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container-pai3" id="funcionar">
+        <div class="planeta5-container">
+          <img src="../assets/iconPlaneta5.svg" alt="" class="planeta5Logo" />
+        </div>
+        <div class="flex-container3">
+          <div class="section-page3">
+            <div class="explicationCard3">
+              <div class="paragrafo" *ngIf="showDivsSecondCards[0]">
+                <div>
+                  <h1>O que é o Faça Funcionar?</h1>
+                </div>
+                <p>
+                  O módulo "Faça Funcionar" reúne todos os exercícios e
+                  conteúdos que você viu até agora e coloca você em situações
+                  reais, semelhantes às que um desenvolvedor encontra no dia a
+                  dia. Para tornar essa prática mais envolvente, recriamos
+                  funcionalidades de alguns aplicativos conhecidos, oferecendo
+                  uma experiência que se aproxima da realidade e facilita o
+                  aprendizado.
+                </p>
+                <p>
+                  Ao longo desse módulo, você aplicará o que aprendeu para
+                  resolver problemas, ajustar detalhes e implementar recursos em
+                  projetos inspirados nesses aplicativos. A ideia é que você
+                  sinta um pouco da rotina de um desenvolvedor, lidando com
+                  desafios que vão desde ajustes simples até melhorias de
+                  performance e pequenas correções de bugs.
+                </p>
+                <p>
+                  Esse exercício final foi pensado para que você possa
+                  consolidar seu conhecimento e ganhar confiança na hora de
+                  aplicar as habilidades em projetos do mundo real, de uma forma
+                  leve e prática.
+                </p>
+                <div class="explicationButton">
+                  <button (click)="changeShowDivsSecondCards(0)">
+                    <span class="explicationText">Veja Alguns Exemplos</span>
+                    <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                      viewBox="0 0 28 25">
+                      <path
+                        d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                        fill="currentColor" />
+                      <path
+                        d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                        fill="currentColor" />
+                      <path
+                        d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                        fill="currentColor" />
+                      <path
+                        d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                        fill="currentColor" />
+                    </svg> </button>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsSecondCards[1]" style="margin-right: -140rem">
+                <div>
+                  <h1>A Calculadora</h1>
+                </div>
+                <p>
+                  A calculadora é um dos primeiros projetos desenvolvidos por
+                  iniciantes, e neste exercício você terá a oportunidade de
+                  aprimorar ainda mais suas habilidades. A tarefa vai além de
+                  apenas criar uma calculadora do zero: você terá que
+                  identificar e corrigir erros nos resultados gerados, seja em
+                  operações matemáticas básicas, arredondamentos incorretos ou
+                  falhas de precisão.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsSecondCards(4)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsSecondCards(1)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsSecondCards[2]" style="bottom: 0">
+                <div>
+                  <h1>App de Musica</h1>
+                </div>
+                <p>
+                  Um aplicativo de música completo, com telas e banco de dados,
+                  traz desafios reais. Neste projeto, você corrigirá bugs que
+                  impactam a experiência do usuário, como problemas ao salvar
+                  músicas favoritas ou na pesquisa de faixas. Essa tarefa ajuda
+                  a aprimorar suas habilidades de depuração e resolução de
+                  problemas, tornando o app mais funcional e fluido para o
+                  usuário.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsSecondCards(5)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsSecondCards(2)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+              <div class="paragrafo" *ngIf="showDivsSecondCards[3]" style="margin-right: -140rem; bottom: 0">
+                <div>
+                  <h1>O Uber</h1>
+                </div>
+                <p>
+                  Um dos aplicativos mais famosos de transporte trouxe
+                  praticidade e agilidade para se locomover. Neste desafio, você
+                  corrigirá problemas relacionados à experiência do usuário,
+                  avaliação de serviço e rotas de viagem, consumindo APIs como a
+                  do Google Maps.
+                </p>
+                <div class="explicationButtons">
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsSecondCards(6)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span> </button>
+                  </div>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsSecondCards(3)">
+                      <span class="explicationText">Avançar</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="{{ appleScreen2 }}" alt="" class="appleScreen1" />
+          </div>
+        </div>
+      </div>
+      <div class="flex-container-pai4" id="comunidade">
+        <div class="planeta6-container">
+          <img src="../assets/iconPlaneta6.svg" alt="Planeta" class="planeta6Logo" />
+        </div>
+        <div class="flex-container4">
+          <div class="section-page4">
+            <div class="spanContainer">
+              <div class="explicationCard4">
+                <div class="paragrafo" *ngIf="showDivsThirdCards[0]">
+                  <div>
+                    <h1>Demonstre suas tecnologias</h1>
+                  </div>
+                  <p>
+                    No seu perfil, haverá insígnias das tecnologias que você
+                    está praticando, uma espécie de registro ou mini currículo
+                    para que as pessoas conheçam suas capacidades.
+                  </p>
+                  <div>
+                    <h1>Mostre seu Progresso</h1>
+                  </div>
+                  <p>
+                    Haverá também um registro da sua jornada, mostrando quantas
+                    vezes você venceu os desafios semanais, quantos projetos
+                    realizou, a experiência obtida e muito mais!
+                  </p>
+                  <div class="explicationButton">
+                    <button (click)="changeShowDivsThirdCards(0)">
+                      <span class="explicationText">Desafie Seus Amigos</span>
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                        viewBox="0 0 28 25">
+                        <path
+                          d="M11.1803 7.1965L10.0774 7.48429C9.59237 7.63995 9.13843 7.78973 8.70879 7.98356L8.61566 8.00102C8.5158 8.06829 8.42557 8.10138 8.32278 8.15302C8.08614 8.26212 7.84951 8.37121 7.61287 8.4803L5.82981 4.28358C5.59132 3.69718 6.17379 3.11868 6.74085 3.40074L13.9173 6.79664L13.8397 6.81119C12.9344 6.86765 12.0437 7.00226 11.1648 7.19941L11.1803 7.1965Z"
+                          fill="currentColor" />
+                        <path
+                          d="M4.18151 23.0889L6.26451 18.9441C6.31195 18.8543 6.37784 18.7772 6.44666 18.7158C6.74191 18.9193 7.04976 19.1044 7.37313 19.2865C7.37313 19.2865 7.37315 19.2865 7.3916 19.2992C8.13354 19.7427 8.85788 20.0923 9.66951 20.3933L10.7345 20.7599C11.247 20.9228 11.7848 21.0485 12.3041 21.1615C12.2731 21.1673 12.2605 21.1859 12.2324 21.2073C12.2324 21.2073 12.2168 21.2102 12.2013 21.2131L5.73595 23.7523C5.73595 23.7523 5.73595 23.7523 5.72043 23.7552L5.03276 24.0297C4.44789 24.2527 3.89983 23.6434 4.17857 23.0733L4.18151 23.0889Z"
+                          fill="currentColor" />
+                        <path
+                          d="M26.5342 13.6712C26.9346 14.1787 26.9083 14.8956 26.4819 15.3639C23.6912 18.4764 19.5937 20.3612 15.0967 20.2011C13.415 20.1442 11.8076 19.7982 10.3173 19.22L10.3386 18.3907L10.4972 13.4091L10.6562 8.68651C12.1762 8.22352 13.8022 7.98333 15.484 8.04022C19.981 8.20038 23.939 10.3711 26.5342 13.6712ZM17.8684 12.7877C17.0128 13.7087 17.0592 15.1564 17.9919 16.0172C18.909 16.881 20.3471 16.8379 21.1998 15.9012C22.0555 14.9802 22.0091 13.5325 21.0764 12.6717C20.1593 11.808 18.7212 11.8511 17.8684 12.7877Z"
+                          fill="currentColor" />
+                        <path
+                          d="M9.33779 10.568L9.07736 18.6918C8.81228 18.5635 8.5598 18.4166 8.31024 18.2854C8.07621 18.1512 7.88581 17.9928 7.6673 17.8558C7.55658 17.7794 7.43032 17.7059 7.31959 17.6296C7.09815 17.4769 6.86413 17.3428 6.63976 17.1745C6.22792 16.8633 5.84127 16.5152 5.46721 16.1484L5.68827 11.414C6.8011 10.4933 8.05482 9.72422 9.39615 9.16527L9.35622 10.5806L9.33779 10.568Z"
+                          fill="currentColor" />
+                      </svg> </button>
+                  </div>
+                </div>
+                <div class="paragrafo" *ngIf="showDivsThirdCards[1]" style="margin-right: -140rem">
+                  <div>
+                    <h1>Desafie seus amigos</h1>
+                  </div>
+                  <p>
+                    Desafie seus amigos e mostre quem manda! Toda semana, um
+                    novo ranking começa, onde você pode competir com seus amigos
+                    no aprendizado de programação. Alcance o topo, melhore suas
+                    habilidades e, claro, não esqueça de compartilhar sua
+                    vitória com aquele amigo competitivo para dar aquela zoada!
+                  </p>
+                  <div class="explicationButtonBack">
+                    <button (click)="changeShowDivsThirdCards(1)">
+                      <svg class="explicationIcon" xmlns="http://www.w3.org/2000/svg" width="29" height="26"
+                        viewBox="0 0 29 26">
+                        <path
+                          d="M17.4086 17.3094L18.4963 16.9685C18.9732 16.7896 19.4193 16.618 19.8391 16.4036L19.9313 16.3816C20.0278 16.3096 20.1163 16.2722 20.2165 16.2156C20.4475 16.0952 20.6786 15.9748 20.9097 15.8544L22.8938 19.9599C23.1604 20.5341 22.6066 21.1401 22.0265 20.8858L14.6942 17.8412L14.771 17.8229C15.6725 17.7227 16.5556 17.5452 17.4239 17.3057L17.4086 17.3094Z"
+                          fill="currentColor" />
+                        <path
+                          d="M23.63 1.09677L21.75 5.33759C21.707 5.42958 21.6449 5.50976 21.5791 5.57446C21.2744 5.38543 20.9579 5.2155 20.6261 5.04926C20.6261 5.04926 20.6261 5.04924 20.607 5.03743C19.8445 4.6304 19.1041 4.3162 18.2789 4.05491L17.1974 3.74021C16.6775 3.60239 16.1343 3.50285 15.6102 3.41511C15.6409 3.4078 15.6526 3.38863 15.6796 3.36585C15.6796 3.36585 15.695 3.36219 15.7103 3.35853L22.0452 0.509421C22.0452 0.509421 22.0452 0.509423 22.0606 0.505765L22.7342 0.198284C23.3076 -0.052694 23.8845 0.529334 23.6336 1.11225L23.63 1.09677Z"
+                          fill="currentColor" />
+                        <path
+                          d="M1.7593 11.585C1.33476 11.0975 1.32632 10.3801 1.72953 9.89172C4.36638 6.64788 8.36781 4.56688 12.8673 4.5092C14.5498 4.48462 16.1721 4.75239 17.6886 5.25783L17.7075 6.08719L17.7902 11.0706L17.8599 15.7953C16.3641 16.3314 14.7516 16.65 13.0691 16.6746C8.56961 16.7322 4.5111 14.7556 1.7593 11.585ZM10.4576 12.048C11.2677 11.0867 11.1512 9.64292 10.178 8.82827C9.22013 8.00995 7.78585 8.12259 6.97943 9.0994C6.16933 10.0607 6.2858 11.5045 7.25903 12.3192C8.2169 13.1375 9.6512 13.0248 10.4576 12.048Z"
+                          fill="currentColor" />
+                        <path
+                          d="M19.0857 13.8524L18.9526 5.72556C19.2236 5.84088 19.4829 5.97538 19.7385 6.09437C19.9788 6.21701 20.1766 6.36604 20.4015 6.49234C20.5158 6.56323 20.6454 6.63054 20.7597 6.70143C20.9883 6.8432 21.2285 6.96582 21.4608 7.12307C21.8872 7.41393 22.2903 7.74299 22.6816 8.09124L22.69 12.8308C21.623 13.8042 20.408 14.6331 19.0953 15.2563L19.0667 13.8407L19.0857 13.8524Z"
+                          fill="currentColor" />
+                      </svg> <span class="explicationText">Voltar</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="{{ appleScreen3 }}" alt="iPhone" class="appleScreen1" />
+          </div>
+        </div>
+        <img src="../assets/iconPlaneta7.svg" alt="Planeta" class="planeta7Logo" />
+        <div>
+          <img src="../assets/iconAlien1.svg" alt="" style="position: absolute; max-width: 70%" />
+        </div>
+      </div>
+      <div class="flex-container-pai5" id="planos">
+        <div class="flex-container5">
+          <div class="explicationCard5">
+            <div class="primeiroCard">
+
+              <h1>Estrela Anã</h1>
+              <div class="image-animation">
+                <img src="../assets/primeiraEstrela.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela2.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela3.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela4.svg" alt="Underline" width="240px" class="image-phase" />
+              </div>
+              <p class="price">
+                <span class="currency">R$</span>
+                <span class="amount">33</span>
+                <span class="cents">,99</span>
+                <br />
+                <span class="per-month">por mês</span>
+              </p>
+              <div class="subtitleCard">
+                <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                <hr class="horizontal-line" />
+                <h2>Benefícios em sua órbita</h2>
+                <hr class="horizontal-line" />
+                <img src="../assets/iconRightRocket.svg" alt="Underline" />
+              </div>
+              <div class="descriptionCard">
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Limite de até 5 conexões</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso a uma rota espacial</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>tentativas de acerto por exercício</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                </div>
+
+                <div class="footerCard">
+                  <img src="../assets/iconCardFooter.svg" alt="Underline" />
+                  <h2>Clique para baixar o App</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explicationSecondCard5">
+            <div class="recommendedTag">
+              <img src="../assets/rocketTag.svg" alt="Underline" />
+              <p>Recomendado</p>
+            </div>
+            <div class="primeiroCard">
+              <h1>Gigante Vermelha</h1>
+              <div class="image-animation">
+                <img src="../assets/segundaEstrela.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/segundaEstrela2.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/segundaEstrela3.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/segundaEstrela4.svg" alt="Underline" width="240px" class="image-phase" />
+              </div>
+              <p class="price">
+                <span class="currency">R$</span>
+                <span class="amount">66</span>
+                <span class="cents">,99</span>
+                <br />
+                <span class="per-month">por mês</span>
+              </p>
+              <div class="subtitleCard">
+                <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                <hr class="horizontal-line" />
+                <h2>Benefícios em sua órbita</h2>
+                <hr class="horizontal-line" />
+                <img src="../assets/iconRightRocket.svg" alt="Underline" />
+              </div>
+              <div class="descriptionCard">
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Limite de até 5 conexões</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso a uma rota espacial</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>tentativas de acerto por exercício</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                </div>
+
+                <div class="footerCard">
+                  <img src="../assets/iconCardFooter2.svg" alt="Underline" />
+                  <h2>Clique para baixar o App</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explicationCard5">
+            <div class="primeiroCard">
+              <h1>Supergigante Vermelha</h1>
+              <div class="image-animation">
+                <img src="../assets/terceiraEstrela2.svg" alt="Underline" class="image-phase" width="168px" />
+                <img src="../assets/terceiraEstrela2.svg" alt="Underline" class="image-phase" width="200px" />
+                <img src="../assets/terceiraEstrela3.svg" alt="Underline" class="image-phase" width="240px" />
+                <img src="../assets/terceiraEstrela4.svg" alt="Underline" class="image-phase" width="240px" />
+              </div>
+              <p class="price">
+                <span class="currency">R$</span>
+                <span class="amount">99</span>
+                <span class="cents">,99</span>
+                <br />
+                <span class="per-month">por mês</span>
+              </p>
+              <div class="subtitleCard">
+                <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                <hr class="horizontal-line" />
+                <h2>Benefícios em sua órbita</h2>
+                <hr class="horizontal-line" />
+                <img src="../assets/iconRightRocket.svg" alt="Underline" />
+              </div>
+              <div class="descriptionCard">
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Limite de até 5 conexões</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso a uma rota espacial</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>tentativas de acerto por exercício</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                </div>
+
+                <div class="footerCard">
+                  <img src="../assets/iconCardFooter3.svg" alt="Underline" />
+                  <h2>Clique para baixar o App</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-container5-mobile">
+          <button (click)="changeShowCardPrice(false)">
+            <img src="../assets/iconLeftArrow.svg" alt="" />
+          </button>
+          <div class="explicationCard5" *ngIf="showCardPrice === 1">
+            <div class="primeiroCard">
+
+              <h1>Estrela Anã</h1>
+              <div class="image-animation">
+                <img src="../assets/primeiraEstrela.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela2.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela3.svg" alt="Underline" width="240px" class="image-phase" />
+                <img src="../assets/primeiraEstrela4.svg" alt="Underline" width="240px" class="image-phase" />
+              </div>
+              <p class="price">
+                <span class="currency">R$</span>
+                <span class="amount">33</span>
+                <span class="cents">,99</span>
+                <br />
+                <span class="per-month">por mês</span>
+              </p>
+              <div class="subtitleCard">
+                <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                <hr class="horizontal-line" />
+                <h2>Benefícios em sua órbita</h2>
+                <hr class="horizontal-line" />
+                <img src="../assets/iconRightRocket.svg" alt="Underline" />
+              </div>
+              <div class="descriptionCard">
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Limite de até 5 conexões</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso a uma rota espacial</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>tentativas de acerto por exercício</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                </div>
+
+                <div class="footerCard">
+                  <img src="../assets/iconCardFooter.svg" alt="Underline" />
+                  <h2>Clique para baixar o App</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="segundoCard" *ngIf="showCardPrice === 2">
+            <div class="recommendedTag">
+              <img src="../assets/rocketTag.svg" alt="Underline" />
+              <p>Recomendado</p>
+            </div>
+            <div class="explicationSecondCard5">
+              <div class="primeiroCard">
+                <h1>Gigante Vermelha</h1>
+                <div class="image-animation">
+                  <img src="../assets/segundaEstrela.svg" alt="Underline" width="240px" class="image-phase" />
+                  <img src="../assets/segundaEstrela2.svg" alt="Underline" width="240px" class="image-phase" />
+                  <img src="../assets/segundaEstrela3.svg" alt="Underline" width="240px" class="image-phase" />
+                  <img src="../assets/segundaEstrela4.svg" alt="Underline" width="240px" class="image-phase" />
+                </div>
+                <p class="price">
+                  <span class="currency">R$</span>
+                  <span class="amount">66</span>
+                  <span class="cents">,99</span>
+                  <br />
+                  <span class="per-month">por mês</span>
+                </p>
+                <div class="subtitleCard">
+                  <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                  <hr class="horizontal-line" />
+                  <h2>Benefícios em sua órbita</h2>
+                  <hr class="horizontal-line" />
+                  <img src="../assets/iconRightRocket.svg" alt="Underline" />
+                </div>
+                <div class="descriptionCard">
+                  <div class="descriptionCardItem">
+                    <img src="../assets/check.svg" alt="Underline" />
+                    <p>Limite de até 5 conexões</p>
+                  </div>
+                  <div class="descriptionCardItem">
+                    <img src="../assets/check.svg" alt="Underline" />
+                    <p>Acesso a uma rota espacial</p>
+                  </div>
+                  <div class="descriptionCardItem">
+                    <img src="../assets/check.svg" alt="Underline" />
+                    <p>tentativas de acerto por exercício</p>
+                  </div>
+                  <div class="descriptionCardItem">
+                    <img src="../assets/check.svg" alt="Underline" />
+                    <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                  </div>
+                  <div class="footerCard">
+                    <img src="../assets/iconCardFooter2.svg" alt="Underline" />
+                    <h2>Clique para baixar o App</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explicationCard5" *ngIf="showCardPrice === 3">
+            <div class="primeiroCard">
+
+              <h1>Supergigante Vermelha</h1>
+              <div class="image-animation">
+                <img src="../assets/terceiraEstrela2.svg" alt="Underline" class="image-phase" width="168px" />
+                <img src="../assets/terceiraEstrela2.svg" alt="Underline" class="image-phase" width="200px" />
+                <img src="../assets/terceiraEstrela3.svg" alt="Underline" class="image-phase" width="240px" />
+                <img src="../assets/terceiraEstrela4.svg" alt="Underline" class="image-phase" width="240px" />
+              </div>
+              <p class="price">
+                <span class="currency">R$</span>
+                <span class="amount">99</span>
+                <span class="cents">,99</span>
+                <br />
+                <span class="per-month">por mês</span>
+              </p>
+              <div class="subtitleCard">
+                <img src="../assets/iconLeftRocket.svg" alt="Underline" />
+                <hr class="horizontal-line" />
+                <h2>Benefícios em sua órbita</h2>
+                <hr class="horizontal-line" />
+                <img src="../assets/iconRightRocket.svg" alt="Underline" />
+              </div>
+              <div class="descriptionCard">
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Limite de até 5 conexões</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso a uma rota espacial</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>tentativas de acerto por exercício</p>
+                </div>
+                <div class="descriptionCardItem">
+                  <img src="../assets/check.svg" alt="Underline" />
+                  <p>Acesso apenas a documentação de sua Rota Espacial</p>
+                </div>
+
+                <div class="footerCard">
+                  <img src="../assets/iconCardFooter3.svg" alt="Underline" />
+                  <h2>Clique para baixar o App</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button (click)="changeShowCardPrice(true)">
+            <img src="../assets/iconRightArrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="flex-container-pai6" id="duvidas">
+        <div class="planeta8-container">
+          <img src="../assets/iconPlaneta8.svg" alt="" class="planeta8Logo" />
+        </div>
+        <div class="flex-container6">
+          <div class="dropCardList">
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>A NineStacks emite certificado de conclusão?</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(0)"
+                  [ngClass]="{ 'rotate-down': showCards[0] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[0]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>Tem suporte online para dúvidas para dúvidas</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(1)"
+                  [ngClass]="{ 'rotate-down': showCards[1] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[1]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>Eu posso refazer quantas vezes quiser o Curso?</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(2)"
+                  [ngClass]="{ 'rotate-down': showCards[2] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[2]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="dropCardList">
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>Quanto tempo levo para finalizar uma rota?</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(3)"
+                  [ngClass]="{ 'rotate-down': showCards[3] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[3]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>Quanto tempo levo para finalizar uma rota?</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(4)"
+                  [ngClass]="{ 'rotate-down': showCards[4] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[4]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+            <div class="dropCard1">
+              <div class="dropCardContent">
+                <h1>Quanto tempo levo para finalizar uma rota?</h1>
+                <img src="../assets/iconRocketCard.svg" (click)="changeCards(5)"
+                  [ngClass]="{ 'rotate-down': showCards[5] }" alt="" width="46px" />
+              </div>
+              <div *ngIf="showCards[5]">
+                <p>
+                  Sim, a NineStacks emite um certificado de conclusão ao término
+                  de uma Rota Espacial. Caso você tenha obtido um bom
+                  desempenho, o certificado será gerado e ficará disponível na
+                  aba 'Certificados' nas configurações do app, além de ser
+                  enviado por e-mail. Recomendamos que você emoldure e
+                  compartilhe seus certificados sempre que possível, pois eles
+                  são realmente lindos!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container-pai7" id="contato">
+        <div class="flex-container7">
+          <div class="container7-imgs">
+            <img src="../assets/iconPlaneta4.svg" alt="Planeta" class="planeta9Logo" />
+            <img src="../assets/astronauta3.svg" alt="astronauta" class="astronauta3" />
+          </div>
+          <div class="socialContainer">
+            <h1>Redes Sociais</h1>
+            <div class="socialContainerIcons">
+              <a href=""><img src="../assets/iconInsta.svg" alt="" class="socialIcon" /></a>
+              <a href=""><img src="../assets/iconFacebook.svg" alt="" class="socialIcon" /></a>
+              <a href=""><img src="../assets/iconTwitter.svg" alt="" class="socialIcon" /></a>
+            </div>
+          </div>
+          <div class="explicationCard7">
+            <div class="form-container">
+              <div class="form-group">
+                <label class="form-label">Nome Completo</label>
+                <label class="form-label2"></label>
+                <input type="text" class="form-input" placeholder="Digite seu nome" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Telefone</label>
+                <label class="form-label2"></label>
+                <input type="text" class="form-input" placeholder="(00) 00000-0000" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <label class="form-label2"></label>
+                <input type="email" class="form-input" placeholder="Digite seu e-mail preferido" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mensagem</label>
+                <label class="form-label2"></label>
+                <textarea class="form-input" placeholder="Digite sua mensagem"></textarea>
+              </div>
+              <div class="form-button">
+                <button>
+                  <span class="form-text">Avançar</span>
+                  <img src="../assets/iconRightRocket.svg" alt="" class="form-icon">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container-pai8">
+        <div class="footerPlanetas">
+          <div class="footerPlanetasDiv1">
+            <img src="../assets/iconPlaneta3Footer.svg" alt="" class="planeta3" />
+            <img src="../assets/iconPlaneta2.svg" alt="" class="planeta2" />
+            <img src="../assets/iconPlaneta1.svg" alt="" class="planeta1" />
+            <img src="../assets/iconPlaneta4.svg" alt="" class="planeta4" />
+          </div>
+          <div class="footerPlanetasDiv2">
+            <img src="../assets/iconPlaneta6Footer.svg" alt="" class="planeta6" />
+            <img src="../assets/iconPlaneta5Footer.svg" alt="" class="planeta5" />
+            <img src="../assets/iconPlaneta7.svg" alt="" class="planeta7" />
+          </div>
+          <div class="footerDiv3">
+            <div class="footerPlanetasDiv3">
+              <img src="../assets/iconPlaneta9.svg" alt="" class="planeta9" />
+              <img src="../assets/iconPlaneta8.svg" alt="" class="planeta8" />
+            </div>
+            <div class="footerPersonagens">
+              <img src="../assets/iconPersonagemFooter1.svg" alt="" />
+              <img src="../assets/iconPersonagemFooter2.svg" alt="" />
+              <img src="../assets/iconPersonagemFooter3.svg" alt="" />
+              <img src="../assets/iconPersonagemFooter4.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <footer>
+    <p>
+      © Copyright 2024 - ninestacks.com.br - Todos os direitos são reservados.
+    </p>
+  </footer>
+</section>
+<script>
+  document.addEventListener("scroll", function () {
+    const header = document.querySelector(".headerMenu");
+    if (window.scrollY >= window.innerHeight) {
+      header.classList.add("show");
+    } else {
+      header.classList.remove("show");
+    }
+  });
+</script>
